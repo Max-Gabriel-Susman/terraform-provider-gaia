@@ -1,0 +1,5 @@
+package ouroboros
+
+func resourceNetwork() {
+
+}
