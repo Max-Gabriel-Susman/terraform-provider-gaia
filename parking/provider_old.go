@@ -68,7 +68,7 @@ func validateCredentials(v interface{}, k string) (warnings []string, errors []e
 
 	if _, err := googleoauth.CredentialsFromJSON(context.Background(), []byte(creds)); err != nil {
 		errors = append(errors,
-			fmt.Errorf("JSON credentials in %q are not valid: %s", creds, err))``
+			fmt.Errorf("JSON credentials in %q are not valid: %s", creds, err))
 	}
 	return 
 }

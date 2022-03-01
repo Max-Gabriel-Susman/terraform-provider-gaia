@@ -95,9 +95,56 @@ func ResourceMapWithErrors() (map[string]*schema.Resource, error) {
 }
 
 func providerConfigure(ctx context.Context, d *schema.ResourceData, p *schema.Provider) (interface{}, diag.Diagnostics) {
-	/
+	// configuration struct 
 	config := Config{
 
 	}
+
+	// opt in extentsion for adding to the user-agent header
+	if ext := os.Getenv("GOOGLE_TERRAFORM_USERAGENT_EXTENSION"); ext != "" {
+
+	}
+
+	// does this handle request timeouts for the providerConfiguration function
+	if v, ok := d.GetOk("request_timeout"); ok {
+		var err error
+
+	}
+
+	// GetOk returns the data for the given key and whether or not the key
+	// has been set to a non-zero value at some point.
+	if v, ok := d.GetOk("request_reason"); ok {
+		config.RequestReason = v.(string)
+	}
+
+	// Check for primary credentials in config. Note that if neither is set, ADCs
+	// will be used if available.
+	if v, ok := d.GetOk("access_token"); ok {
+		config.AccessToken = v.(string)
+	}
+
+	if v, ok := d.GetOk("credentials"); ok {
+		config.Credentials = v.(string)
+	}
+
+	// only check environment variables if neither value was set in config- this
+	// means config beats env var in all cases.
+	if config.AccessToken == "" && config.Credentials == "" {
+		config.Credentials = multiEnvSearch([]string{
+			"GOOGLE_CREDENTIALS",
+			"GOOGLE_CLOUD_KEYFILE_JSON",
+			"GCLOUD_KEYFILE_JSON",
+		})
+
+		config.AccessToken = multiEnvSearch([]string{
+			"GOOGLE_OAUTH_ACCESS_TOKEN",
+		})
+	}
+
+	// Given that impersonate_service_account is a secondary auth method, it has
+	// no conflicts to worry about. We pull the env var in a DefaultFunc.
+	if v, ok := d.GetOk("impersonate_service_account"); ok {
+		config.ImpersonateServiceAccount = v.(string)
+	}	
 }
 

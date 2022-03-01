@@ -95,9 +95,9 @@ func ResourceMapWithErrors() (map[string]*schema.Resource, error) {
 }
 
 func providerConfigure(ctx context.Context, d *schema.ResourceData, p *schema.Provider) (interface{}, diag.Diagnostics) {
-	/
-	config := Config{
 
-	}
+	
+
+	return &config, nil
 }
 
