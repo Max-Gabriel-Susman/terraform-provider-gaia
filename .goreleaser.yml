@@ -45,6 +45,10 @@ signs:
       - "--detach-sign"
       - "${artifact}"
 release:
+  disable: false
+  github:
+      owner: Max-Gabriel-Susman
+      name: terraform-provider-ouroboros
   extra_files:
     - glob: 'terraform-registry-manifest.json'
       name_template: '{{ .ProjectName }}_{{ .Version }}_manifest.json'
