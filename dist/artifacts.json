@@ -1,0 +1,1 @@
+[{"name":"terraform-provider-ouroboros_0.8.1_SHA256SUMS","path":"dist/terraform-provider-ouroboros_0.8.1_SHA256SUMS","type":"Checksum","extra":{"Refresh":"func() error"}},{"name":"terraform-provider-ouroboros_0.8.1_SHA256SUMS.sig","path":"dist/terraform-provider-ouroboros_0.8.1_SHA256SUMS.sig","type":"Signature","extra":{"ID":"default"}}]
