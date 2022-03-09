@@ -15,6 +15,7 @@ builds:
     - -trimpath
   ldflags:
     - '-s -w -X main.version={{.Version}} -X main.commit={{.Commit}}'
+  gobinary: "go1. 16. 0"
   goos:
     - freebsd
     - windows
