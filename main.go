@@ -5,7 +5,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/Max-Gabriel-Susman/terraform-provider-ouroboros/internal/provider"
+	"github.com/Max-Gabriel-Susman/terraform-provider-gaia/gaia"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
 
