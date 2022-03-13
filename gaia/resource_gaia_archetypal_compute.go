@@ -33,15 +33,18 @@ func resourceGaiaArchetypalComputeCreate(ctx context.Context, d *schema.Resource
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
+	creationDiagnostics := diag.Diagnostics{}
+
 	idFromAPI := "my-id"
 	d.SetId(idFromAPI)
 
-	// write logs using the tflog package
+	// write logs using the tflog package, apparently I'm supposed to use tflog instead of hclog
 	// see https://pkg.go.dev/github.com/hashicorp/terraform-plugin-log/tflog
 	// for more information
 	tflog.Trace(ctx, "created a resource")
 
-	return diag.Errorf("suck me nutz")
+	// return diag.Errorf("not implemented")
+	return creationDiagnostics
 }
 
 func resourceGaiaArchetypalComputeRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
