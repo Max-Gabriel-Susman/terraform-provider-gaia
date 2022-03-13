@@ -27,7 +27,8 @@ func Provider() *schema.Provider {
 	provider := &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"model_name": {
-				Type: schema.TypeString,
+				Type:     schema.TypeString,
+				Optional: true,
 			},
 		},
 		DataSourcesMap: map[string]*schema.Resource{
