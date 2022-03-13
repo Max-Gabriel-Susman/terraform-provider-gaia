@@ -41,7 +41,7 @@ func resourceGaiaArchetypalComputeCreate(ctx context.Context, d *schema.Resource
 	// for more information
 	tflog.Trace(ctx, "created a resource")
 
-	return diag.Errorf("not implemented")
+	return diag.Errorf("suck me nutz")
 }
 
 func resourceGaiaArchetypalComputeRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
