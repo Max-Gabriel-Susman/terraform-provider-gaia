@@ -1,4 +1,4 @@
-package provider
+package gaia
 
 import (
 	"context"
@@ -23,21 +23,17 @@ func init() {
 	// }
 }
 
-func New(version string) func() *schema.Provider {
-	return func() *schema.Provider {
-		p := &schema.Provider{
-			DataSourcesMap: map[string]*schema.Resource{
-				"scaffolding_data_source": dataSourceScaffolding(),
-			},
-			ResourcesMap: map[string]*schema.Resource{
-				"scaffolding_resource": resourceScaffolding(),
-			},
-		}
-
-		p.ConfigureContextFunc = configure(version, p)
-
-		return p
+func Provider() *schema.Provider {
+	provider := &schema.Provider{
+		DataSourcesMap: map[string]*schema.Resource{
+			"scaffolding_data_source": dataSourceScaffolding(),
+		},
+		ResourcesMap: map[string]*schema.Resource{
+			"scaffolding_resource": resourceScaffolding(),
+			"archetypal_compute":   resourceArchetypalCompute(),
+		},
 	}
+	return provider
 }
 
 type apiClient struct {
