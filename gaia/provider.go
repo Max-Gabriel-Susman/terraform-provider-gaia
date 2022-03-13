@@ -35,8 +35,8 @@ func Provider() *schema.Provider {
 			"scaffolding_data_source": dataSourceScaffolding(),
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"scaffolding_resource": resourceScaffolding(),
-			"archetypal_compute":   resourceArchetypalCompute(),
+			"scaffolding_resource":    resourceScaffolding(),
+			"gaia_archetypal_compute": resourceGaiaArchetypalCompute(),
 		},
 	}
 	return provider

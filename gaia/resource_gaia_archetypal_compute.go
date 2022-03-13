@@ -8,15 +8,15 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func resourceArchetypalCompute() *schema.Resource {
+func resourceGaiaArchetypalCompute() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
 		Description: "Sample resource in the Terraform provider scaffolding.",
 
-		CreateContext: resourceArchetypalComputeCreate,
-		ReadContext:   resourceArchetypalComputeRead,
-		UpdateContext: resourceArchetypalComputeUpdate,
-		DeleteContext: resourceArchetypalComputeDelete,
+		CreateContext: resourceGaiaArchetypalComputeCreate,
+		ReadContext:   resourceGaiaArchetypalComputeRead,
+		UpdateContext: resourceGaiaArchetypalComputeUpdate,
+		DeleteContext: resourceGaiaArchetypalComputeDelete,
 
 		Schema: map[string]*schema.Schema{
 			"sample_attribute": {
@@ -29,7 +29,7 @@ func resourceArchetypalCompute() *schema.Resource {
 	}
 }
 
-func resourceArchetypalComputeCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceGaiaArchetypalComputeCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
@@ -44,21 +44,21 @@ func resourceArchetypalComputeCreate(ctx context.Context, d *schema.ResourceData
 	return diag.Errorf("not implemented")
 }
 
-func resourceArchetypalComputeRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceGaiaArchetypalComputeRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceArchetypalComputeUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceGaiaArchetypalComputeUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceArchetypalComputeDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceGaiaArchetypalComputeDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
