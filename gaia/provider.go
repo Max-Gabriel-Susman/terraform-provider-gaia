@@ -25,6 +25,11 @@ func init() {
 
 func Provider() *schema.Provider {
 	provider := &schema.Provider{
+		Schema: map[string]*schema.Schema{
+			"model_name": {
+				Type: schema.TypeString,
+			},
+		},
 		DataSourcesMap: map[string]*schema.Resource{
 			"scaffolding_data_source": dataSourceScaffolding(),
 		},
